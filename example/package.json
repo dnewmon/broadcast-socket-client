@@ -1,5 +1,5 @@
 {
-    "name": "@broadcast-socket/example",
+    "name": "broadcast-socket-example",
     "version": "1.0.0",
     "description": "Example app using Broadcast Socket Frontend",
     "type": "module",
@@ -10,7 +10,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@broadcast-socket/frontend": "*",
+        "broadcast-socket-client": "github:dnewmon/broadcast-socket-client",
         "react": "^19.1.0",
         "react-dom": "^19.1.0"
     },
