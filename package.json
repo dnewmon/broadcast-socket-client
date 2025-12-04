@@ -1,5 +1,5 @@
 {
-    "name": "@broadcast-socket-client",
+    "name": "broadcast-socket-client",
     "version": "1.0.0",
     "description": "Broadcast Socket Frontend Client - React hook for channel-based WebSocket communication",
     "type": "module",
