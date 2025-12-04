@@ -1,5 +1,5 @@
 {
-    "name": "@broadcast-socket/frontend",
+    "name": "@broadcast-socket-client",
     "version": "1.0.0",
     "description": "Broadcast Socket Frontend Client - React hook for channel-based WebSocket communication",
     "type": "module",
@@ -18,8 +18,8 @@
     "scripts": {
         "build": "tsc",
         "dev": "tsc --watch",
-        "example:dev": "npm run dev -w @broadcast-socket/example",
-        "example:build": "npm run build -w @broadcast-socket/example"
+        "example:dev": "npm run dev -w @broadcast-socket-client/example",
+        "example:build": "npm run build -w @broadcast-socket-client/example"
     },
     "peerDependencies": {
         "react": "^18.0.0"
