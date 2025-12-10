@@ -1,5 +1,5 @@
+import { useBroadcastSocket } from "broadcast-socket-client";
 import React, { useState, useRef, useEffect } from "react";
-import { useBroadcastSocket } from "@broadcast-socket/frontend";
 
 function App() {
     const [serverUrl, setServerUrl] = useState("http://localhost:12000");
