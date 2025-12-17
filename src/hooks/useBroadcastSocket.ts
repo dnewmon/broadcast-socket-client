@@ -7,6 +7,8 @@ export interface BroadcastMessage {
     sender?: string;
 }
 
+export type MessageCallback = (msg: BroadcastMessage) => void;
+
 interface UseBroadcastSocketReturn {
     messages: BroadcastMessage[];
     isConnected: boolean;
@@ -15,7 +17,7 @@ interface UseBroadcastSocketReturn {
     disconnect: () => void;
 }
 
-export function useBroadcastSocket(): UseBroadcastSocketReturn {
+export function useBroadcastSocket(messageCallback?: MessageCallback): UseBroadcastSocketReturn {
     const [messages, setMessages] = useState<BroadcastMessage[]>([]);
     const [isConnected, setIsConnected] = useState(false);
     const socketRef = useRef<Socket | null>(null);
@@ -51,6 +53,11 @@ export function useBroadcastSocket(): UseBroadcastSocketReturn {
 
             socket.on("message", (message: BroadcastMessage) => {
                 console.log("Received message:", message);
+
+                if (messageCallback) {
+                    messageCallback(message);
+                }
+
                 setMessages((prev) => [...prev, message]);
             });
 

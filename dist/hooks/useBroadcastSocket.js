@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { io } from "socket.io-client";
-export function useBroadcastSocket() {
+export function useBroadcastSocket(messageCallback) {
     const [messages, setMessages] = useState([]);
     const [isConnected, setIsConnected] = useState(false);
     const socketRef = useRef(null);
@@ -29,6 +29,9 @@ export function useBroadcastSocket() {
         });
         socket.on("message", (message) => {
             console.log("Received message:", message);
+            if (messageCallback) {
+                messageCallback(message);
+            }
             setMessages((prev) => [...prev, message]);
         });
         socket.on("connect_error", (error) => {
