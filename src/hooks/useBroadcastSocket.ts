@@ -52,8 +52,6 @@ export function useBroadcastSocket(messageCallback?: MessageCallback): UseBroadc
             });
 
             socket.on("message", (message: BroadcastMessage) => {
-                console.log("Received message:", message);
-
                 if (messageCallback) {
                     messageCallback(message);
                 }
