@@ -28,7 +28,6 @@ export function useBroadcastSocket(messageCallback) {
             setIsConnected(false);
         });
         socket.on("message", (message) => {
-            console.log("Received message:", message);
             if (messageCallback) {
                 messageCallback(message);
             }
